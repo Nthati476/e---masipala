@@ -1,0 +1,102 @@
+:root {
+  --teal: #0f3d4c;
+  --teal-soft: #1c5568;
+  --road: #f2b705;
+  --paper: #f5f8f9;
+  --ink: #1b2a30;
+  --line: #cfdadd;
+  --fault: #c8442f;
+  --ok: #2f7d5b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+h1, h2, h3, .brand { font-family: "Bricolage Grotesque", system-ui, sans-serif; line-height: 1.15; }
+
+a:focus-visible, button:focus-visible { outline: 3px solid var(--road); outline-offset: 3px; }
+
+.site-header {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  padding: 1rem clamp(1rem, 5vw, 4rem);
+  background: var(--teal); color: #fff;
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { color: #fff; text-decoration: none; font-weight: 800; font-size: 1.4rem; }
+.site-header nav a { color: #fff; text-decoration: none; margin-left: 1.25rem; }
+.site-header nav a:hover { color: var(--road); }
+
+.hero {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center;
+  padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 4rem);
+  background: var(--teal); color: #fff;
+}
+.hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; margin-bottom: 1rem; }
+.hero-text p { max-width: 55ch; margin-bottom: 1.5rem; color: #dbe8ec; }
+
+.btn {
+  display: inline-block; padding: 0.7rem 1.4rem; border: 0; border-radius: 4px;
+  background: var(--road); color: var(--ink); font: 600 1rem "Source Sans 3", sans-serif;
+  text-decoration: none; cursor: pointer;
+}
+.btn:hover { background: #ffc933; }
+.btn-alt { background: var(--teal); color: #fff; margin-top: 1rem; }
+.btn-alt:hover { background: var(--teal-soft); }
+
+.ticket {
+  background: #fff; color: var(--ink); padding: 1.5rem; border-radius: 8px;
+  border-top: 8px solid var(--road);
+}
+.ticket h2 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+.ticket-ref { color: #506168; margin-bottom: 1rem; font-size: 0.95rem; }
+
+.steps { list-style: none; border-left: 3px solid var(--line); margin-left: 0.6rem; }
+.steps li { position: relative; padding: 0.35rem 0 0.35rem 1.6rem; color: #78878d; }
+.steps li::before {
+  content: ""; position: absolute; left: -0.6rem; top: 0.55rem;
+  width: 1rem; height: 1rem; border-radius: 50%; background: #fff; border: 3px solid var(--line);
+}
+.steps li.done { color: var(--ink); }
+.steps li.done::before { background: var(--ok); border-color: var(--ok); }
+.steps li.current { color: var(--ink); font-weight: 600; }
+.steps li.current::before { background: var(--road); border-color: var(--teal); }
+.ticket-note { margin-top: 0.75rem; min-height: 3.2em; font-size: 0.95rem; }
+
+.block { padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 5vw, 4rem); }
+.block h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 0.5rem; }
+.lead { max-width: 60ch; margin-bottom: 2rem; color: #465a61; }
+.block-dark { background: var(--teal); color: #fff; }
+.block-dark .lead { color: #dbe8ec; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem 2rem; }
+.grid article { border-top: 3px solid var(--teal); padding-top: 0.75rem; }
+.grid h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+
+.cols { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.75rem 2rem; }
+.cols li { padding: 0.6rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+.team li { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-size: 1.2rem; }
+
+.layers { display: grid; gap: 0.5rem; margin-bottom: 2rem; max-width: 820px; }
+.layer { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; padding: 0.9rem 1rem; background: #fff; border-left: 6px solid var(--teal); }
+.layer strong { font-family: "Bricolage Grotesque", system-ui, sans-serif; }
+.layer:nth-child(odd) { border-left-color: var(--road); }
+
+.goals { display: flex; flex-wrap: wrap; gap: 1rem 3rem; margin-bottom: 1.5rem; }
+.goals strong { display: block; font: 800 1.6rem "Bricolage Grotesque", system-ui, sans-serif; color: var(--teal); }
+.small { color: #506168; font-size: 0.95rem; }
+
+.site-footer { padding: 1.5rem clamp(1rem, 5vw, 4rem); background: var(--ink); color: #c9d5d9; font-size: 0.9rem; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; }
+  .layer { grid-template-columns: 1fr; gap: 0.2rem; }
+  .site-header nav a { margin: 0 1rem 0 0; }
+}

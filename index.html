@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-Masipala | Integrated Municipal Management System</title>
+  <meta name="description" content="e-Masipala by Nexus Solution: report faults, book facilities and track complaints with your municipality online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">e-Masipala</a>
+    <nav aria-label="Main">
+      <a href="#residents">Residents</a>
+      <a href="#officials">Municipal staff</a>
+      <a href="#how">How it works</a>
+      <a href="#team">Team</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Report it. Track it. Get it fixed.</h1>
+        <p>e-Masipala brings municipal services into one place. Residents report potholes, water leaks and electricity faults with a photo, book community halls and follow every request from their phone.</p>
+        <a class="btn" href="#residents">See what residents can do</a>
+      </div>
+
+      <div class="ticket" aria-labelledby="ticket-title">
+        <h2 id="ticket-title">Follow a fault report</h2>
+        <p class="ticket-ref">Ref: <strong>FLT-2026-0417</strong> &middot; Water leak, Main Road</p>
+        <ol class="steps" id="steps">
+          <li>Submitted</li>
+          <li>Received</li>
+          <li>Assigned</li>
+          <li>In progress</li>
+          <li>Resolved</li>
+          <li>Closed</li>
+        </ol>
+        <p class="ticket-note" id="stepNote" aria-live="polite"></p>
+        <button class="btn btn-alt" id="nextStep" type="button">Move to next status</button>
+      </div>
+    </section>
+
+    <section id="residents" class="block">
+      <h2>What residents can do</h2>
+      <p class="lead">One login gives you access to every service on the Resident Portal.</p>
+      <div class="grid">
+        <article><h3>Report maintenance faults</h3><p>Choose the fault type, pin the location and attach a photo. You get a reference number straight away.</p></article>
+        <article><h3>Submit and track complaints</h3><p>See the status, the department handling it and every update from municipal officials.</p></article>
+        <article><h3>Book public facilities</h3><p>Check availability for community halls and recreation facilities. Double bookings are blocked automatically.</p></article>
+        <article><h3>Pay bills online</h3><p>View utility bills, pay through a secure gateway and keep your payment receipts.</p></article>
+        <article><h3>Apply for a vendor licence</h3><p>Street vendors can register and apply for a business licence without visiting an office.</p></article>
+        <article><h3>Get notified</h3><p>Receive SMS, email or in-app alerts when a bill, booking or complaint changes.</p></article>
+      </div>
+    </section>
+
+    <section id="officials" class="block block-dark">
+      <h2>What municipal staff can do</h2>
+      <p class="lead">The Administration Portal is a single dashboard for managing service delivery.</p>
+      <ul class="cols">
+        <li>Manage resident accounts and profiles</li>
+        <li>Generate and schedule utility bills</li>
+        <li>Verify online payments</li>
+        <li>Assign and track maintenance requests</li>
+        <li>Resolve complaints through set workflows</li>
+        <li>Approve street vendor applications</li>
+        <li>Manage facility bookings and availability</li>
+        <li>Produce financial and performance reports</li>
+        <li>Control access by staff role</li>
+        <li>Send notifications to residents</li>
+      </ul>
+    </section>
+
+    <section id="how" class="block">
+      <h2>How it is built</h2>
+      <p class="lead">A layered Jakarta EE application, designed to grow from 5,000 to 50,000+ residents.</p>
+      <div class="layers">
+        <div class="layer"><strong>Presentation</strong><span>HTML5, CSS3 and JavaScript. Resident and Admin portals that work on desktop, tablet and mobile.</span></div>
+        <div class="layer"><strong>API</strong><span>REST endpoints with JSON, versioning, rate limiting and HTTPS with TLS 1.3.</span></div>
+        <div class="layer"><strong>Business logic</strong><span>Resident, billing, payment, fault, complaint, vendor, notification and facility services.</span></div>
+        <div class="layer"><strong>Data access</strong><span>JPA and Hibernate with connection pooling and Redis caching.</span></div>
+        <div class="layer"><strong>Database</strong><span>MySQL 8.0+ with a primary and replica setup, encrypted backups and replication.</span></div>
+      </div>
+      <div class="goals">
+        <p><strong>99.9%</strong> availability target</p>
+        <p><strong>Under 2 s</strong> page load target</p>
+        <p><strong>Under 5 s</strong> payment target</p>
+        <p><strong>POPIA</strong> compliant design</p>
+      </div>
+      <p class="small">Java &middot; Payara Server &middot; Maven &middot; Docker &middot; Nginx / HAProxy &middot; PayFast / Peach Payments &middot; Twilio / SendGrid &middot; Google Maps</p>
+    </section>
+
+    <section id="team" class="block block-dark">
+      <h2>Nexus Solution</h2>
+      <p class="lead">DICT321 Assignment 1 group project. Lecturer: Dr Bonga Nomvete. Submitted 4 September 2026.</p>
+      <ul class="cols team">
+        <li>Lwanga Tseku</li>
+        <li>Nthati Moleleki</li>
+        <li>Xolane Siboza</li>
+        <li>Confidence Simbini</li>
+        <li>Xolani Mabuza</li>
+        <li>Lonwabo Nomatshila</li>
+        <li>Lesedi Legoale</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Nexus Solution. e-Masipala Integrated Municipal Management System.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
